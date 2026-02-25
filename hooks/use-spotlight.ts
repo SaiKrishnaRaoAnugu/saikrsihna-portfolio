@@ -23,6 +23,10 @@ export default function useSpotlightEffect(config: Config = {}) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // capture non-null typed references for use inside nested functions
+    const c = canvas as HTMLCanvasElement;
+    const context = ctx as CanvasRenderingContext2D;
+
     let width = 0;
     let height = 0;
     let raf = 0;
@@ -34,18 +38,18 @@ export default function useSpotlightEffect(config: Config = {}) {
     const dpr = Math.max(1, window.devicePixelRatio || 1);
 
     function resize() {
-      width = canvas.clientWidth || window.innerWidth;
-      height = canvas.clientHeight || window.innerHeight;
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      width = c.clientWidth || window.innerWidth;
+      height = c.clientHeight || window.innerHeight;
+      c.width = Math.floor(width * dpr);
+      c.height = Math.floor(height * dpr);
+      c.style.width = width + "px";
+      c.style.height = height + "px";
+      context.setTransform(dpr, 0, 0, dpr, 0, 0);
       clear();
     }
 
     function clear() {
-      ctx.clearRect(0, 0, width, height);
+      context.clearRect(0, 0, width, height);
     }
 
     function onMove(e: MouseEvent) {
@@ -69,7 +73,7 @@ export default function useSpotlightEffect(config: Config = {}) {
 
       // only draw when mouse is on screen
       if (drawX > -9998 && drawY > -9998) {
-        const grad = ctx.createRadialGradient(drawX, drawY, 0, drawX, drawY, cfg.radius!);
+        const grad = context.createRadialGradient(drawX, drawY, 0, drawX, drawY, cfg.radius!);
         // inner color (bright)
         grad.addColorStop(0, hexToRgba(cfg.color!, cfg.brightness! * 1.4));
         // mid
@@ -77,12 +81,12 @@ export default function useSpotlightEffect(config: Config = {}) {
         // outer transparent
         grad.addColorStop(1, hexToRgba(cfg.color!, 0));
 
-        ctx.globalCompositeOperation = "lighter";
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.rect(0, 0, width, height);
-        ctx.fill();
-        ctx.globalCompositeOperation = "source-over";
+        context.globalCompositeOperation = "lighter";
+        context.fillStyle = grad;
+        context.beginPath();
+        context.rect(0, 0, width, height);
+        context.fill();
+        context.globalCompositeOperation = "source-over";
       }
 
       raf = requestAnimationFrame(draw);
