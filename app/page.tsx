@@ -129,8 +129,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              AI Software Engineer building scalable backend systems, AI-powered applications,
-              and production-ready data architectures.
+              AI Software Engineer building scalable backend systems, AI powered applications,
+              and production ready data architectures.
             </motion.p>
 
             <motion.div
@@ -487,7 +487,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.15 }}
             >
-              Developed an end-to-end Retrieval-Augmented Generation (RAG) system using LangChain
+              Developed an end-to-end Retrieval Augmented Generation (RAG) system using LangChain
               and Mistral LLM via Ollama for fully local inference. Implemented semantic document
               retrieval using FAISS vector database with HuggingFace embeddings and built a modern
               Streamlit interface for privacy-focused document question answering without external APIs.
