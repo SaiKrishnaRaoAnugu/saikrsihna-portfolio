@@ -560,7 +560,7 @@ export default function Home() {
                 description: "",
               },
               {
-                title: "Working Student — Intelligent Systems Group",
+                title: "Working Student — Intelligent Systems Group(University of Siegen)",
                 period: "06/2022 – 01/2023",
                 description: "",
               },
