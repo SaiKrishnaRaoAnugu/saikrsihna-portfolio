@@ -3,7 +3,7 @@
 A modern, production-ready portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 Designed with a clean, professional interface to showcase projects, experience, and technical skills.
 
-**Live Website:** https://saikrishnaraoanugu.vercel.app
+**Live Website:** https://saikrishnaraoanugu-portfolio.vercel.app
 **GitHub Repository:** https://github.com/SaiKrishnaRaoAnugu/saikrsihna-portfolio
 
 ---
