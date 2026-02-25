@@ -540,32 +540,32 @@ export default function Home() {
           >
             {[
               {
-                title: "AI Software Engineer — A-Team Event GmbH",
-                period: "08/2025 – Present | Germany",
+                title: "AI Software Engineer — A-Team Event GmbH(Siegen, Germany)",
+                period: "08/2025 – Present",
                 description: "Developing AI-integrated backend systems, managing PostgreSQL databases, implementing API architectures, and building modern frontend interfaces for startup-scale platforms.",
               },
               {
-                title: "Data Scientist (Master Thesis) — Robert Bosch GmbH",
+                title: "Data Scientist (Master Thesis) — Robert Bosch GmbH(Kusterdingen, Germany)",
                 period: "01/2024 – 06/2024",
                 description: "Designed anomaly detection systems using Generative AI, built ETL pipelines with Airflow, and deployed models in cloud environments.",
               },
               {
-                title: "ML Engineer Intern — Robert Bosch GmbH",
+                title: "ML Engineer Intern — Robert Bosch GmbH(Kusterdingen, Germany)",
                 period: "07/2023 – 12/2023",
                 description: "Automated data pipelines, built KPI dashboards, and improved analysis workflows by 30%.",
               },
               {
-                title: "Data Analyst Trainee — Brainnest",
+                title: "Data Analyst Trainee — Brainnest(Bremen, Germany)",
                 period: "01/2023 – 02/2023",
                 description: "",
               },
               {
-                title: "Working Student — Intelligent Systems Group(University of Siegen)",
+                title: "Working Student — Intelligent Systems Group(University of Siegen, Germany)",
                 period: "06/2022 – 01/2023",
                 description: "",
               },
               {
-                title: "Graduate Engineer Trainee — Network Enhancers",
+                title: "Graduate Engineer Trainee — Network Enhancers(Hyderabad, India)",
                 period: "06/2019 – 06/2020",
                 description: "",
               },
