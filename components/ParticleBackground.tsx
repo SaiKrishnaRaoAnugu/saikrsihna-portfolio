@@ -10,7 +10,7 @@ export default function ParticleBackground() {
     await loadSlim(engine);
   };
 
-  const particlesLoaded = async (container: Container) => {
+  const particlesLoaded = async (container?: Container) => {
     // Particle engine loaded
   };
 
