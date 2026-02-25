@@ -1,0 +1,509 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), var(--font-inter), sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.75px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Tech accents */
+code, .tech-accent, .subtitle {
+  font-family: var(--font-space-mono), monospace;
+}
+
+/* Body text refinement */
+p {
+  font-family: var(--font-dm-sans), var(--font-inter), sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.7;
+}
+
+/* Navbar */
+nav {
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+}
+
+nav a {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Section headings */
+section h2 {
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Button text */
+button, a.button {
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Gradient Text Animation */
+.animate-gradient-shift {
+  background: linear-gradient(270deg, #ffffff, #ef4444, #ffffff);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Framer Motion Variants */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom link hover effect */
+a {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ef4444;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef4444;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+/* Selection color */
+::selection {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Custom animated cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, opacity 0.12s ease, width 0.15s ease, height 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  z-index: 9999;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(59,130,246,0.9));
+  box-shadow: 0 2px 10px rgba(59,130,246,0.2);
+  mix-blend-mode: screen;
+}
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(59,130,246,0.45);
+  background: transparent;
+  transform-origin: center center;
+  box-shadow: 0 6px 30px rgba(59,130,246,0.06);
+  z-index: 9998;
+}
+
+.cursor-hover.cursor-ring,
+.cursor-hover.cursor-dot {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.cursor-hover.cursor-ring {
+  border-color: rgba(99,102,241,0.7);
+  width: 48px;
+  height: 48px;
+}
+
+.cursor-active.cursor-dot {
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0.85;
+}
+
+.cursor-active.cursor-ring {
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0.9;
+}
+
+/* Hide cursor on touch devices / no-hover */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* Small interactive polish for anchors & buttons */
+a, button {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+a:hover, button:hover {
+  transform: translateY(-2px);
+}
+
+/* Additional Professional Animations */
+
+/* Animated underline for titles */
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-underline::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  animation: expandWidth 0.8s ease-out;
+  margin-top: 8px;
+}
+
+/* Smooth card reveal */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-card-reveal {
+  animation: cardReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Border glow effect */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.1), inset 0 0 10px rgba(239, 68, 68, 0.05);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), inset 0 0 20px rgba(239, 68, 68, 0.1);
+  }
+}
+
+.animate-border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Text gradient reveal */
+@keyframes textGradientReveal {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-text-gradient {
+  background: linear-gradient(90deg, #ffffff, #ef4444, #ffffff, #ef4444);
+  background-size: 200% auto;
+  animation: textGradientReveal 4s linear infinite;
+}
+
+/* Subtle scale on hover for cards */
+@keyframes hoverLift {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+.hover-lift-animation:hover {
+  animation: hoverLift 0.3s ease-out forwards;
+}
+
+/* Pulse dot indicator */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth slide in from left */
+@keyframes slideInLeftSmooth {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideInLeftSmooth 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Badge pulse */
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}
+
+.animate-badge-pulse {
+  animation: badgePulse 2s infinite;
+}
+
+/* Line draw animation */
+@keyframes lineDraw {
+  from {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-line-draw {
+  animation: lineDraw 1s ease-out forwards;
+}
+
+/* Gentle shimmer on text */
+@keyframes gentleShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-gentle-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% auto;
+  animation: gentleShimmer 3s ease-in-out infinite;
+}
+
+/* Floating animation with rotation */
+@keyframes floatRotate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+.animate-float-rotate {
+  animation: floatRotate 4s ease-in-out infinite;
+}
+
+
