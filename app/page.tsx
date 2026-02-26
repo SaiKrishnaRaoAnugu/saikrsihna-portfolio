@@ -217,7 +217,7 @@ export default function Home() {
             whileInView={{ x: [0] }}
             transition={{ staggerChildren: 0.1 }}
           >
-            ABOUT
+            {t("about.heading", lang)}
             <motion.div
               className="absolute bottom-0 left-0 h-0.5 bg-red-500"
               initial={{ width: 0 }}
@@ -233,12 +233,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            AI Software Engineer focused on backend architecture, AI integration,
-            and scalable system design. At A-Team Event GmbH, I build API-driven
-            backend systems with PostgreSQL and Supabase, develop AI-powered workflows
-            using LLMs, and design modern frontend interfaces. Previously at Robert Bosch,
-            I developed anomaly detection pipelines using deep learning and Generative AI,
-            combining data science expertise with production engineering.
+            {t("about.text", lang)}
           </motion.p>
         </AnimatedSection>
       </section>
@@ -254,7 +249,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div>TECHNICAL EXPERTISE</div>
+              <div>{t("expertise.heading", lang)}</div>
               <motion.div
                 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
                 initial={{ width: 0 }}
@@ -269,48 +264,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
             >
-              {[
-                {
-                  title: "Backend & System Architecture",
-                  skills: [
-                    "• API Design & REST Architecture",
-                    "• PostgreSQL & Supabase Integration",
-                    "• Relational Database Modeling",
-                    "• Authentication & Backend Logic",
-                    "• Production-ready Deployment",
-                  ],
-                },
-                {
-                  title: "AI & Machine Learning Systems",
-                  skills: [
-                    "• LLM Integration & Prompt Engineering",
-                    "• Generative AI Workflows",
-                    "• Deep Learning & Anomaly Detection",
-                    "• NLP & Text Processing Pipelines",
-                    "• Model Deployment (AWS / Databricks)",
-                  ],
-                },
-                {
-                  title: "Data Engineering",
-                  skills: [
-                    "• ETL Pipeline Development",
-                    "• Airflow Orchestration",
-                    "• Data Cleaning & Validation",
-                    "• Automated Reporting Pipelines",
-                    "• Structured & Unstructured Data Processing",
-                  ],
-                },
-                {
-                  title: "Frontend & Product Development",
-                  skills: [
-                    "• Next.js & React Development",
-                    "• Modern UI Design with Tailwind",
-                    "• Responsive Interfaces",
-                    "• Startup Product Development",
-                    "• Cross-functional Collaboration",
-                  ],
-                },
-              ].map((category, i) => (
+              {Object.values(translations[lang].expertise.categories).map((category: any, i: number) => (
                 <motion.div
                   key={i}
                   className="p-8 border border-white/10 rounded-lg hover:border-red-500/50 transition relative group"
@@ -339,7 +293,7 @@ export default function Home() {
                     {category.title}
                   </h3>
                   <ul className="space-y-3 text-gray-400 relative z-10" style={{ fontFamily: 'var(--font-dm-sans)' }}>
-                    {category.skills.map((skill, j) => (
+                    {category.skills.map((skill: string, j: number) => (
                       <motion.li
                         key={j}
                         initial={{ opacity: 0, x: -10 }}

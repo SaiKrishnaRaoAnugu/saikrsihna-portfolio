@@ -141,78 +141,143 @@ export const translations: Record<Lang, any> = {
         "Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.",
     },
   },
-  eu: {
+  de: {
     nav: {
-      about: "Sobre",
-      expertise: "Experiencia",
-      tools: "Herramientas",
-      projects: "Proyectos",
-      experience: "Experiencia",
-      education: "Educación",
-      contact: "Contacto",
+      about: "Über",
+      expertise: "Expertise",
+      tools: "Werkzeuge",
+      projects: "Projekte",
+      experience: "Erfahrung",
+      education: "Ausbildung",
+      contact: "Kontakt",
     },
     hero: {
-      hi: "¡Hola! Soy",
+      hi: "Hallo! Ich bin",
       nameFirst: "Sai Krishna Rao",
       nameLast: "Anugu",
-      title: "Ingeniero de Software de IA | Científico de Datos",
+      title: "KI-Softwareentwickler | Data Scientist",
       description:
-        "Ingeniero de software de IA que construye sistemas de backend escalables, aplicaciones impulsadas por IA y arquitecturas de datos listas para producción.",
+        "KI-Softwareentwickler, der skalierbare Backend-Systeme, KI-gestützte Anwendungen und produktionsbereite Datenarchitekturen entwickelt.",
       github: "GitHub",
       linkedin: "LinkedIn",
-      downloadCv: "Descargar CV",
+      downloadCv: "Lebenslauf herunterladen",
     },
     about: {
-      heading: "SOBRE",
-      text: "Ingeniero de Software de IA enfocado en la arquitectura de backend, integración de IA y diseño de sistemas escalables. En A-Team Event GmbH, construyo sistemas de backend dirigidos por API con PostgreSQL y Supabase, desarrollo flujos de trabajo potenciado por IA usando LLMs y diseño interfaces frontend modernas. Anteriormente en Robert Bosch, desarrollé pipelines de detección de anomalías usando aprendizaje profundo y IA Generativa, combinando experiencia en ciencia de datos con ingeniería de producción.",
+      heading: "ÜBER",
+      text: "KI-Softwareentwickler mit Schwerpunkt auf Backend-Architektur, KI-Integration und skalierbarem Systemdesign. Bei A-Team Event GmbH baue ich API-gesteuerte Backend-Systeme mit PostgreSQL und Supabase, entwickle KI-gestützte Workflows mit LLMs und gestalte moderne Frontend-Oberflächen. Zuvor habe ich bei Robert Bosch Anomalieerkennungspipelines mit Deep Learning und Generativer KI entwickelt und dabei Data-Science-Expertise mit Produktionstechnik kombiniert.",
     },
     expertise: {
-      heading: "EXPERIENCIA TÉCNICA",
+      heading: "TECHNISCHE EXPERTISE",
       categories: {
         backend: {
-          title: "Arquitectura de Backend y Sistemas",
+          title: "Backend- & Systemarchitektur",
           skills: [
-            "• Diseño de API y Arquitectura REST",
-            "• Integración PostgreSQL y Supabase",
-            "• Modelado de Bases de Datos Relacionales",
-            "• Autenticación y Lógica de Backend",
-            "• Despliegue listo para producción",
+            "• API-Design & REST-Architektur",
+            "• PostgreSQL- & Supabase-Integration",
+            "• Relationale Datenmodellierung",
+            "• Authentifizierung & Backend-Logik",
+            "• Produktionsbereite Bereitstellung",
           ],
         },
         ai: {
-          title: "Sistemas de IA y Aprendizaje Automático",
+          title: "KI- & Maschinelles Lernen Systeme",
           skills: [
-            "• Integración de LLM y Prompt Engineering",
-            "• Flujos de trabajo Generativos IA",
-            "• Aprendizaje profundo y detección de anomalías",
-            "• Pipelines de NLP y procesamiento de texto",
-            "• Despliegue de modelos (AWS / Databricks)",
+            "• LLM-Integration & Prompt Engineering",
+            "• Generative KI-Workflows",
+            "• Deep Learning & Anomalieerkennung",
+            "• NLP- & Textverarbeitungspipelines",
+            "• Modellbereitstellung (AWS / Databricks)",
           ],
         },
         data: {
-          title: "Ingeniería de Datos",
+          title: "Datenengineering",
           skills: [
-            "• Desarrollo de pipelines ETL",
-            "• Orquestación Airflow",
-            "• Limpieza y validación de datos",
-            "• Pipelines de informes automatizados",
-            "• Procesamiento de datos estructurados y no estructurados",
+            "• Entwicklung von ETL-Pipelines",
+            "• Airflow-Orchestrierung",
+            "• Datenbereinigung & Validierung",
+            "• Automatisierte Berichtspipelines",
+            "• Verarbeitung strukturierter & unstrukturierter Daten",
           ],
         },
         frontend: {
-          title: "Frontend y Desarrollo de Productos",
+          title: "Frontend & Produktentwicklung",
           skills: [
-            "• Desarrollo Next.js y React",
-            "• Diseño UI moderno con Tailwind",
-            "• Interfaces responsivas",
-            "• Desarrollo de productos en startups",
-            "• Colaboración interfuncional",
+            "• Next.js & React Entwicklung",
+            "• Modernes UI-Design mit Tailwind",
+            "• Responsive Oberflächen",
+            "• Produktentwicklung in Startups",
+            "• Interdisziplinäre Zusammenarbeit",
           ],
         },
       },
     },
     tools: {
-      heading: "HERRAMIENTAS Y TECNOLOGÍAS",
+      heading: "WERKZEUGE & TECHNOLOGIEN",
+    },
+    projects: {
+      heading: "PROJEKTE",
+      items: [
+        {
+          title: "SmartDoc AI — Lokaler RAG-basierter Wissensassistent",
+          description:
+            "Entwickelte ein komplettes Retrieval Augmented Generation (RAG) System mit LangChain und Mistral LLM über Ollama für vollständig lokale Inferenz. Implementierte semantische Dokumentenabrufung mit FAISS-Vektordatenbank und HuggingFace-Embeddings und baute eine moderne Streamlit-Oberfläche für datenschutzorientiertes Dokumenten-Question-Answering ohne externe APIs.",
+          repoLabel: "GitHub-Repository ansehen",
+        },
+      ],
+    },
+    experience: {
+      heading: "ERFAHRUNG",
+      entries: [
+        {
+          title: "KI-Softwareentwickler — A-Team Event GmbH (Siegen, Deutschland)",
+          period: "08/2025 – Gegenwart",
+          description:
+            "Entwicklung KI-integrierter Backend-Systeme, Verwaltung von PostgreSQL-Datenbanken, Implementierung von API-Architekturen und Aufbau moderner Frontend-Oberflächen für Plattformen im Startup-Maßstab.",
+        },
+        {
+          title: "Data Scientist (Masterarbeit) — Robert Bosch GmbH (Kusterdingen, Deutschland)",
+          period: "01/2024 – 06/2024",
+          description:
+            "Entwurf von Anomalieerkennungssystemen mit generativer KI, Aufbau von ETL-Pipelines mit Airflow und Bereitstellung von Modellen in Cloud-Umgebungen.",
+        },
+        {
+          title: "ML Engineer Praktikant — Robert Bosch GmbH (Kusterdingen, Deutschland)",
+          period: "07/2023 – 12/2023",
+          description:
+            "Automatisierte Datenpipelines, Erstellung von KPI-Dashboards und Verbesserung der Analyse-Workflows um 30 %.",
+        },
+        {
+          title: "Data Analyst Trainee — Brainnest (Bremen, Deutschland)",
+          period: "01/2023 – 02/2023",
+          description: "",
+        },
+        {
+          title: "Werkstudent — Intelligent Systems Group (Universität Siegen, Deutschland)",
+          period: "06/2022 – 01/2023",
+          description: "",
+        },
+        {
+          title: "Graduate Engineer Trainee — Network Enhancers (Hyderabad, Indien)",
+          period: "06/2019 – 06/2020",
+          description: "",
+        },
+      ],
+    },
+    education: {
+      heading: "AUSBILDUNG",
+      items: [
+        {
+          text: "M.Sc. Mechatronik (KI-Spezialisierung) — Universität Siegen (2021–2024)",
+        },
+        {
+          text: "B.Tech Maschinenbau — JNTU Hyderabad (2015–2019)",
+        },
+      ],
+    },
+    contact: {
+      heading: "KONTAKT",
+      intro:
+        "Haben Sie eine Frage oder möchten Sie zusammenarbeiten? Füllen Sie das folgende Formular aus und ich melde mich so schnell wie möglich bei Ihnen.",
     },
   },
 };

@@ -6,7 +6,7 @@ export default function LanguageSwitcher() {
   const { lang, setLang } = useLanguage();
 
   const toggle = () => {
-    setLang(lang === "en" ? "eu" : "en");
+    setLang(lang === "en" ? "de" : "en");
   };
 
   return (
@@ -14,7 +14,7 @@ export default function LanguageSwitcher() {
       onClick={toggle}
       className="text-sm text-gray-400 hover:text-white transition px-2 py-1 border border-transparent hover:border-gray-400 rounded"
     >
-      {lang.toUpperCase()}
+      {lang === "en" ? "EN" : "DE"}
     </button>
   );
 }
