@@ -59,15 +59,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <LanguageSwitcher />
           <div className="flex gap-8 text-sm text-gray-400">
-            {[
-              "about",
-              "expertise",
-              "tools",
-              "projects",
-              "experience",
-              "education",
-              "contact",
-            ].map((key, i) => (
+            {Object.entries(translations[lang].nav as Record<string,string>).map(([key, label], i: number) => (
               <motion.a
                 key={i}
                 href={`#${key}`}
@@ -75,7 +67,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="hover:text-red-500 transition cursor-pointer"
               >
-                {t(key, lang)}
+                {label}
               </motion.a>
             ))}
           </div>
