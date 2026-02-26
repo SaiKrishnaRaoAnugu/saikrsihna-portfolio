@@ -33,6 +33,8 @@ export const metadata = {
   description: "AI Software Engineer Portfolio",
 };
 
+import { LanguageProvider } from "../context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: {
@@ -41,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${spaceMono.variable} ${dmSans.variable}`}>
       <body className="font-sans bg-black text-white antialiased">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

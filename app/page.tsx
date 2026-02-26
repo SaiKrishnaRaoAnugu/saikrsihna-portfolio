@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import SpotlightCursor from "../components/SpotlightCursor";
 import AnimatedGradientBackground from "../components/AnimatedGradientBackground";
 import ContactForm from "../components/ContactForm";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useLanguage } from "../context/LanguageContext";
+import { t } from "../lib/translations";  // simple translation helper
 
 const AnimatedSection = ({ children, delayChildren = false }: { children: React.ReactNode; delayChildren?: boolean }) => {
   const ref = useRef(null);
@@ -39,6 +42,8 @@ const AnimatedSection = ({ children, delayChildren = false }: { children: React.
 };
 
 export default function Home() {
+  const { lang } = useLanguage();
+
   return (
     <main className="min-h-screen bg-[#0b0b0b] text-white scroll-smooth overflow-hidden">
       {/* Spotlight cursor (client-only) */}
@@ -51,17 +56,26 @@ export default function Home() {
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md border-b border-white/5 z-50"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-end items-center">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <LanguageSwitcher />
           <div className="flex gap-8 text-sm text-gray-400">
-            {["About", "Expertise", "Tools", "Projects", "Experience", "Education", "Contact"].map((item, i) => (
+            {[
+              "about",
+              "expertise",
+              "tools",
+              "projects",
+              "experience",
+              "education",
+              "contact",
+            ].map((key, i) => (
               <motion.a
                 key={i}
-                href={`#${item.toLowerCase()}`}
+                href={`#${key}`}
                 whileHover={{ color: "#ef4444", y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="hover:text-red-500 transition cursor-pointer"
               >
-                {item}
+                {t(key, lang)}
               </motion.a>
             ))}
           </div>
@@ -91,7 +105,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
             >
-              Hi There! I'm
+              {t("hi", lang)}
             </motion.p>
 
             <motion.h1
@@ -119,7 +133,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              AI Software Engineer | Data Scientist
+              {t("title", lang)}
             </motion.h2>
 
             <motion.p
@@ -129,8 +143,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              AI Software Engineer building scalable backend systems, AI powered applications,
-              and production ready data architectures.
+              {t("description", lang)}
             </motion.p>
 
             <motion.div
@@ -140,9 +153,9 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               {[
-                { label: "GitHub", url: "https://github.com/SaiKrishnaRaoAnugu" },
-                { label: "LinkedIn", url: "https://www.linkedin.com/in/saikrishnaraoanugu" },
-                { label: "Download CV", url: "/SaiKrishnaRao_Resume.pdf", download: true },
+                { label: t("github", lang), url: "https://github.com/SaiKrishnaRaoAnugu" },
+                { label: t("linkedin", lang), url: "https://www.linkedin.com/in/saikrishnaraoanugu" },
+                { label: t("downloadCv", lang), url: "/SaiKrishnaRao_Resume.pdf", download: true },
               ].map((btn, i) => (
                 <motion.a
                   key={i}
