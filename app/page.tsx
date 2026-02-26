@@ -59,7 +59,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <LanguageSwitcher />
           <div className="flex gap-8 text-sm text-gray-400">
-            {Object.entries(translations[lang].nav as Record<string,string>).map(([key, label], i: number) => (
+            {Object.entries(translations[lang].nav as Record<string, string>).map(([key, label]: [string, string], i: number) => (
               <motion.a
                 key={i}
                 href={`#${key}`}
@@ -145,9 +145,9 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               {[
-                { label: t("github", lang), url: "https://github.com/SaiKrishnaRaoAnugu" },
-                { label: t("linkedin", lang), url: "https://www.linkedin.com/in/saikrishnaraoanugu" },
-                { label: t("downloadCv", lang), url: "/SaiKrishnaRao_Resume.pdf", download: true },
+                { label: t("hero.github", lang), url: "https://github.com/SaiKrishnaRaoAnugu" },
+                { label: t("hero.linkedin", lang), url: "https://www.linkedin.com/in/saikrishnaraoanugu" },
+                { label: t("hero.downloadCv", lang), url: "/SaiKrishnaRao_Resume.pdf", download: true },
               ].map((btn, i) => (
                 <motion.a
                   key={i}
