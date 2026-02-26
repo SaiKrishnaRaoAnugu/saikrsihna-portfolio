@@ -8,7 +8,7 @@ import AnimatedGradientBackground from "../components/AnimatedGradientBackground
 import ContactForm from "../components/ContactForm";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 import { useLanguage } from "../context/LanguageContext";
-import { t } from "../lib/translations";  // simple translation helper
+import { t, translations } from "../lib/translations";  // simple translation helper
 
 const AnimatedSection = ({ children, delayChildren = false }: { children: React.ReactNode; delayChildren?: boolean }) => {
   const ref = useRef(null);
@@ -369,7 +369,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div>TOOLS & TECHNOLOGIES</div>
+              <div>{t("tools.heading", lang)}</div>
               <motion.div
                 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
                 initial={{ width: 0 }}
@@ -460,7 +460,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div>PROJECTS</div>
+            <div>{t("projects.heading", lang)}</div>
             <motion.div
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
               initial={{ width: 0 }}
@@ -469,13 +469,15 @@ export default function Home() {
             />
           </motion.h2>
 
-          <motion.div
-            className="border border-white/10 p-10 rounded-lg hover:border-red-500/50 transition relative group mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ boxShadow: "0 0 40px rgba(239, 68, 68, 0.25)", y: -6 }}
-            transition={{ duration: 0.3 }}
-          >
+          {translations[lang].projects.items.map((proj: any, idx: number) => (
+            <motion.div
+              key={idx}
+              className="border border-white/10 p-10 rounded-lg hover:border-red-500/50 transition relative group mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ boxShadow: "0 0 40px rgba(239, 68, 68, 0.25)", y: -6 }}
+              transition={{ duration: 0.3 }}
+            >
             {/* Animated corner accent */}
             <motion.div
               className="absolute top-0 right-0 w-20 h-20 border-t border-r border-red-500/30 rounded-tr-lg"
@@ -490,7 +492,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
-              SmartDoc AI — Local RAG-based Knowledge Assistant
+              {proj.title}
             </motion.h3>
 
             <motion.p
@@ -500,10 +502,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.15 }}
             >
-              Developed an end-to-end Retrieval Augmented Generation (RAG) system using LangChain
-              and Mistral LLM via Ollama for fully local inference. Implemented semantic document
-              retrieval using FAISS vector database with HuggingFace embeddings and built a modern
-              Streamlit interface for privacy-focused document question answering without external APIs.
+              {proj.description}
             </motion.p>
 
             <motion.div
@@ -519,10 +518,11 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 border border-white hover:border-red-500 hover:text-red-500 transition text-sm tracking-wide inline-block"
               >
-                View GitHub Repository
+                {proj.repoLabel}
               </motion.a>
             </motion.div>
           </motion.div>
+        ))}
         </AnimatedSection>
       </section>
 
@@ -536,7 +536,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div>EXPERIENCE</div>
+            <div>{t("experience.heading", lang)}</div>
             <motion.div
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
               initial={{ width: 0 }}
@@ -551,38 +551,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
           >
-            {[
-              {
-                title: "AI Software Engineer — A-Team Event GmbH(Siegen, Germany)",
-                period: "08/2025 – Present",
-                description: "Developing AI-integrated backend systems, managing PostgreSQL databases, implementing API architectures, and building modern frontend interfaces for startup-scale platforms.",
-              },
-              {
-                title: "Data Scientist (Master Thesis) — Robert Bosch GmbH(Kusterdingen, Germany)",
-                period: "01/2024 – 06/2024",
-                description: "Designed anomaly detection systems using Generative AI, built ETL pipelines with Airflow, and deployed models in cloud environments.",
-              },
-              {
-                title: "ML Engineer Intern — Robert Bosch GmbH(Kusterdingen, Germany)",
-                period: "07/2023 – 12/2023",
-                description: "Automated data pipelines, built KPI dashboards, and improved analysis workflows by 30%.",
-              },
-              {
-                title: "Data Analyst Trainee — Brainnest(Bremen, Germany)",
-                period: "01/2023 – 02/2023",
-                description: "",
-              },
-              {
-                title: "Working Student — Intelligent Systems Group(University of Siegen, Germany)",
-                period: "06/2022 – 01/2023",
-                description: "",
-              },
-              {
-                title: "Graduate Engineer Trainee — Network Enhancers(Hyderabad, India)",
-                period: "06/2019 – 06/2020",
-                description: "",
-              },
-            ].map((exp, i) => (
+            {translations[lang].experience.entries.map((exp: any, i: number) => (
               <motion.div
                 key={i}
                 className="border-l-4 border-red-500/30 pl-8 hover:pl-10 transition-all relative group hover:border-red-500"
@@ -639,7 +608,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div>EDUCATION</div>
+            <div>{t("education.heading", lang)}</div>
             <motion.div
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
               initial={{ width: 0 }}
@@ -654,34 +623,23 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             transition={{ staggerChildren: 0.15, delayChildren: 0.2 }}
           >
-            <motion.div
-              className="p-6 rounded-lg border border-white/10 hover:border-red-500/50 transition"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ boxShadow: "0 0 20px rgba(239, 68, 68, 0.2)", y: -4 }}
-              transition={{ duration: 0.3 }}
-            >
-              <p
-                className="text-gray-300 text-lg font-light"
-                style={{ fontFamily: 'var(--font-dm-sans)' }}
+            {translations[lang].education.items.map((item: any, idx: number) => (
+              <motion.div
+                key={idx}
+                className="p-6 rounded-lg border border-white/10 hover:border-red-500/50 transition"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ boxShadow: "0 0 20px rgba(239, 68, 68, 0.2)", y: -4 }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
               >
-                M.Sc. Mechatronics (AI Specialization) — Universität Siegen (2021–2024)
-              </p>
-            </motion.div>
-            <motion.div
-              className="p-6 rounded-lg border border-white/10 hover:border-red-500/50 transition"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ boxShadow: "0 0 20px rgba(239, 68, 68, 0.2)", y: -4 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-            >
-              <p
-                className="text-gray-300 text-lg font-light"
-                style={{ fontFamily: 'var(--font-dm-sans)' }}
-              >
-                B.Tech Mechanical Engineering — JNTU Hyderabad (2015–2019)
-              </p>
-            </motion.div>
+                <p
+                  className="text-gray-300 text-lg font-light"
+                  style={{ fontFamily: 'var(--font-dm-sans)' }}
+                >
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </AnimatedSection>
       </section>
@@ -696,7 +654,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div>CONTACT</div>
+            <div>{t("contact.heading", lang)}</div>
             <motion.div
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-red-500"
               initial={{ width: 0 }}
@@ -712,7 +670,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.1, duration: 0.6 }}
           >
-            Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.
+            {t("contact.intro", lang)}
           </motion.p>
 
           {/* Contact Info */}
