@@ -97,7 +97,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
             >
-              {t("hi", lang)}
+              {t("hero.hi", lang)}
             </motion.p>
 
             <motion.h1
@@ -125,7 +125,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              {t("title", lang)}
+              {t("hero.title", lang)}
             </motion.h2>
 
             <motion.p
@@ -135,7 +135,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              {t("description", lang)}
+              {t("hero.description", lang)}
             </motion.p>
 
             <motion.div
