@@ -17,35 +17,35 @@ const TOOL_GROUPS = [
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
     text: "text-blue-300",
-    tools: ["Python", "TypeScript", "JavaScript", "Java", "SQL"],
+    tools: ["Python", "TypeScript", "JavaScript", "Java", "SQL", "Bash"],
   },
   {
-    label: "Frameworks",
+    label: "Backend & Frameworks",
     bg: "bg-purple-500/10",
     border: "border-purple-500/20",
     text: "text-purple-300",
-    tools: ["FastAPI", "Next.js", "React", "LangChain", "PyTorch", "TensorFlow", "Scikit-learn"],
+    tools: ["FastAPI", "Next.js", "React", "Node.js", "Express.js"],
   },
   {
-    label: "Databases",
+    label: "AI/ML & Data Science",
+    bg: "bg-red-500/10",
+    border: "border-red-500/20",
+    text: "text-red-300",
+    tools: ["PyTorch", "TensorFlow", "Scikit-learn", "LangChain", "HuggingFace", "Ollama", "OpenAI API", "Jupyter", "Pandas", "NumPy"],
+  },
+  {
+    label: "Vector DB & Data Tools",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20",
     text: "text-cyan-300",
-    tools: ["PostgreSQL", "Supabase", "MongoDB", "Redis", "FAISS"],
+    tools: ["FAISS", "PostgreSQL", "Supabase", "MongoDB", "Redis", "Pinecone"],
   },
   {
     label: "Cloud & DevOps",
     bg: "bg-orange-500/10",
     border: "border-orange-500/20",
     text: "text-orange-300",
-    tools: ["AWS", "Docker", "Databricks", "Apache Airflow", "Git"],
-  },
-  {
-    label: "AI / ML",
-    bg: "bg-red-500/10",
-    border: "border-red-500/20",
-    text: "text-red-300",
-    tools: ["HuggingFace", "Ollama", "OpenAI API", "Streamlit", "Jupyter"],
+    tools: ["AWS", "Docker", "Databricks", "Apache Airflow", "Git", "Streamlit"],
   },
 ];
 
@@ -765,11 +765,14 @@ function Tools() {
         <FadeIn className="text-center mb-14">
           <SectionLabel>{t.heading}</SectionLabel>
           <h2
-            className="text-3xl lg:text-4xl font-black"
+            className="text-3xl lg:text-4xl font-black mb-4"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            My tech stack
+            My Tech Stack
           </h2>
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            {t.description}
+          </p>
         </FadeIn>
 
         <div className="space-y-7">
@@ -777,7 +780,7 @@ function Tools() {
             <FadeIn key={group.label} delay={gi * 0.07}>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
                 <span
-                  className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-600 w-24 shrink-0"
+                  className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-600 w-32 shrink-0"
                   style={{ fontFamily: "var(--font-space-mono)" }}
                 >
                   {group.label}

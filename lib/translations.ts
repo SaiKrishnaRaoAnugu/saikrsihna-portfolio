@@ -74,6 +74,7 @@ export const translations: Record<Lang, any> = {
     },
     tools: {
       heading: "TOOLS & TECHNOLOGIES",
+      description: "Modern tech stack for building scalable AI/ML systems, cloud-native backend architectures, and data-driven applications.",
     },
     projects: {
       heading: "PROJECTS",
@@ -213,6 +214,7 @@ export const translations: Record<Lang, any> = {
     },
     tools: {
       heading: "WERKZEUGE & TECHNOLOGIEN",
+      description: "Moderner Tech-Stack zum Aufbau skalierbarer KI/ML-Systeme, Cloud-nativer Backend-Architekturen und datengestützter Anwendungen.",
     },
     projects: {
       heading: "PROJEKTE",
