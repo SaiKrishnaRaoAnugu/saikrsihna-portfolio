@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${spaceMono.variable} ${dmSans.variable}`}>
-      <body className="font-sans bg-black text-white antialiased">
+      <body className="font-sans text-white antialiased" style={{ background: "#050508" }}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
