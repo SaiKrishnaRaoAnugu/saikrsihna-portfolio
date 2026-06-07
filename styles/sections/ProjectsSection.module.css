@@ -84,7 +84,7 @@
 .slideOverlayLeft {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.6) 45%, rgba(13,13,13,0.1) 100%);
+  background: linear-gradient(to right, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.28) 45%, rgba(13,13,13,0.0) 100%);
   z-index: 1;
 }
 
