@@ -41,6 +41,16 @@
       "tech": ["LangChain", "Mistral LLM", "Ollama", "FAISS", "HuggingFace", "Streamlit", "Python"],
       "link": "https://github.com/SaiKrishnaRaoAnugu",
       "image": "/assets/project-smartdoc.png"
+    },
+    {
+      "id": "jobradar",
+      "type": "AI / Full-Stack",
+      "title": "JobRadar",
+      "subtitle": "AI-Powered Multi-Source Job Aggregator",
+      "desc": "Full-stack job search platform that aggregates listings across 10 sources and 9 European countries. AI-powered resume parsing and ATS scoring via Groq LLM, JWT authentication, job description scraping with BeautifulSoup, and a sleek Alpine.js + Tailwind frontend. Deployed on Render with Docker.",
+      "tech": ["FastAPI", "Groq AI", "Python", "BeautifulSoup4", "PostgreSQL", "Docker", "Alpine.js", "JWT"],
+      "link": "https://github.com/SaiKrishnaRaoAnugu/JobRadar",
+      "image": "/assets/project-jobradar.png"
     }
   ],
   "experience": [
