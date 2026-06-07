@@ -8,6 +8,7 @@ import { translations } from "../lib/translations";
 import ContactForm from "../components/ContactForm";
 import Cursor from "../components/Cursor";
 import LanguageSwitcher from "../components/LanguageSwitcher";
+import CinematicBackdrop from "../components/CinematicBackdrop";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -450,7 +451,8 @@ function Hero() {
   );
 
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-20 pb-20 relative">
+    <section id="hero" className="min-h-screen flex items-center pt-20 pb-20 relative overflow-hidden">
+      <CinematicBackdrop />
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-[1fr_430px] gap-16 items-center">
           <div>
@@ -484,7 +486,7 @@ function Hero() {
             </motion.p>
 
             <motion.h1
-              className="font-black leading-[1.03] mb-5"
+              className="font-black leading-[1.03] mb-5 tracking-[-0.04em]"
               style={{
                 fontFamily: "var(--font-poppins)",
                 fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
@@ -504,7 +506,7 @@ function Hero() {
                 {t.nameFirst}
               </span>
               <br />
-              <span className="text-red-500">{t.nameLast}</span>
+              <span className="text-red-400 drop-shadow-[0_0_18px_rgba(248,113,133,0.25)]">{t.nameLast}</span>
             </motion.h1>
 
             <motion.div
@@ -612,7 +614,7 @@ function Hero() {
             </motion.div>
 
             <motion.div
-              className="cinematic-shell rounded-3xl px-4 py-4 w-full max-w-[380px] text-sm text-slate-200/90"
+              className="cinematic-shell rounded-[28px] px-5 py-5 w-full max-w-[380px] text-sm text-slate-100/95 border border-white/10 shadow-[0_30px_80px_rgba(2,6,23,0.55)]"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.95 }}
