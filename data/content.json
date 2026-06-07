@@ -1,0 +1,22 @@
+{
+  "site": {
+    "tagline": "Portfolio 2026"
+  },
+  "hero": {
+    "taglineHighlight": "AI systems",
+    "freelanceNote": "Open to AI engineering, backend architecture, and data science opportunities.",
+    "availableLabel": "Available for opportunities",
+    "pills": ["AI Engineer", "Backend Architect", "Data Scientist", "ML Systems"],
+    "specialistStat": { "value": "AI + Backend", "label": "Specialist" }
+  },
+  "interstitial": {
+    "availabilityLabel": "Availability",
+    "basedInLabel": "Based in",
+    "statLabels": ["Years\nexperience", "Enterprise\nroles", "AI\nprojects"]
+  },
+  "footer": {
+    "eyebrow": "Available for AI engineering and backend roles",
+    "ctaLines": ["Building intelligent", "systems that"],
+    "ctaAccent": "scale."
+  }
+}

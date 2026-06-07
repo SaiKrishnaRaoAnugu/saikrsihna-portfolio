@@ -1,0 +1,197 @@
+.section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #050505;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  z-index: 1;
+}
+
+/* Left photo column */
+.photoCol {
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+}
+
+.photoWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.photoImg {
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(15%);
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(5,5,5,0.9) 100%);
+}
+
+.signature {
+  position: absolute;
+  bottom: 2rem;
+  right: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-family: var(--font-dancing), cursive;
+  color: rgba(255, 255, 255, 0.6);
+  transform: rotate(-8deg);
+  pointer-events: none;
+  user-select: none;
+}
+
+.socials {
+  position: absolute;
+  bottom: 5.5rem;
+  left: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.socialLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Right content column */
+.content {
+  padding: 6vh 4rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.whoLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  margin-bottom: 1rem;
+}
+
+/* Skills marquee */
+.marqueeWrap {
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.marqueeWrap::before,
+.marqueeWrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  z-index: 1;
+}
+.marqueeWrap::before {
+  left: 0;
+  background: linear-gradient(to right, #050505, transparent);
+}
+.marqueeWrap::after {
+  right: 0;
+  background: linear-gradient(to left, #050505, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 1.5rem;
+  animation: marqueeScroll 18s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.marqueeItem {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), monospace;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-1);
+  flex-shrink: 0;
+}
+
+.marqueeDot {
+  color: var(--accent);
+  align-self: center;
+  flex-shrink: 0;
+  font-size: 0.5rem;
+}
+
+/* Bio text */
+.bio {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-family: var(--font-geist), sans-serif;
+  max-width: 58ch;
+  position: relative;
+}
+
+/* Typewriter sub-classes — JS toggles these */
+.typed { color: var(--text-primary); }
+.untyped { color: transparent; }
+.lastTyped::after {
+  content: "|";
+  color: var(--accent);
+  animation: blink 0.75s step-end infinite;
+  margin-left: 1px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 38svh 1fr;
+  }
+  .photoCol {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .socials {
+    bottom: 1rem;
+    flex-direction: row;
+  }
+  .content {
+    padding: 2rem 1.5rem;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .signature { font-size: 1.1rem; bottom: 1.5rem; right: 1rem; }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section { grid-template-columns: 35% 65%; }
+  .content { padding: 5vh 2.5rem 3rem; }
+}

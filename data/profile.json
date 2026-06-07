@@ -1,0 +1,141 @@
+{
+  "name": {
+    "first": "Sai Krishna Rao",
+    "last": "Anugu",
+    "full": "Sai Krishna Rao Anugu"
+  },
+  "roles": {
+    "short": "AI Engineer",
+    "detailed": "AI Software Engineer · Backend Architect · Data Scientist"
+  },
+  "tagline": "Building AI systems that scale in production.",
+  "bio": "AI Software Engineer focused on backend architecture, AI integration, and scalable system design. At A-Team Event GmbH, I build API-driven backend systems with PostgreSQL and Supabase, develop AI-powered workflows using LLMs, and design modern frontend interfaces. Previously at Robert Bosch, I developed anomaly detection pipelines using deep learning and Generative AI, combining data science expertise with production engineering.",
+  "location": {
+    "based": "Siegen, Germany",
+    "availability": "Worldwide"
+  },
+  "available": true,
+  "email": "saikrishna20rao@gmail.com",
+  "socials": [
+    { "label": "GitHub", "href": "https://github.com/SaiKrishnaRaoAnugu" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sai-krishna-rao-anugu/" }
+  ],
+  "stats": [
+    { "value": "3+", "label": "Years experience" },
+    { "value": "5+", "label": "Enterprise roles" },
+    { "value": "M.Sc.", "label": "AI Focus" }
+  ],
+  "skills": [
+    "Python", "TypeScript", "FastAPI", "Next.js", "React", "LangChain",
+    "PyTorch", "TensorFlow", "FAISS", "PostgreSQL", "AWS", "Docker",
+    "Airflow", "Scikit-learn", "HuggingFace", "Ollama", "Streamlit",
+    "Supabase", "MongoDB", "Databricks", "Git", "Pandas", "NumPy"
+  ],
+  "projects": [
+    {
+      "id": "smartdoc-ai",
+      "type": "AI / ML",
+      "title": "SmartDoc AI",
+      "subtitle": "Local RAG-based Knowledge Assistant",
+      "desc": "End-to-end Retrieval Augmented Generation system using LangChain and Mistral LLM via Ollama for fully local inference. Semantic document retrieval with FAISS and HuggingFace embeddings, and a modern Streamlit interface for privacy-focused document Q&A without external APIs.",
+      "tech": ["LangChain", "Mistral LLM", "Ollama", "FAISS", "HuggingFace", "Streamlit", "Python"],
+      "link": "https://github.com/SaiKrishnaRaoAnugu",
+      "image": "/assets/project-smartdoc.jpg"
+    }
+  ],
+  "experience": [
+    {
+      "id": "ateam",
+      "company": "A-Team Event GmbH",
+      "role": "AI Software Engineer",
+      "period": "08/2025",
+      "periodEnd": "Present",
+      "type": "Full-time",
+      "location": "Siegen, Germany",
+      "bullets": [
+        "Built AI-integrated backend systems using FastAPI and PostgreSQL",
+        "Developed LLM-powered workflows for event management automation",
+        "Implemented API architectures with Supabase and real-time data pipelines",
+        "Designed and shipped modern frontend interfaces with Next.js"
+      ],
+      "tech": ["FastAPI", "PostgreSQL", "Supabase", "Next.js", "LangChain"]
+    },
+    {
+      "id": "bosch-thesis",
+      "company": "Robert Bosch GmbH",
+      "role": "Data Scientist — Master Thesis",
+      "period": "01/2024",
+      "periodEnd": "06/2024",
+      "type": "Thesis",
+      "location": "Kusterdingen, Germany",
+      "bullets": [
+        "Designed anomaly detection pipeline using Generative AI and deep learning",
+        "Built ETL pipelines with Apache Airflow for automated data processing",
+        "Deployed ML models in cloud environments on AWS and Databricks",
+        "Reduced false positive rate by 40% using ensemble model approaches"
+      ],
+      "tech": ["PyTorch", "TensorFlow", "Airflow", "AWS", "Databricks"]
+    },
+    {
+      "id": "bosch-intern",
+      "company": "Robert Bosch GmbH",
+      "role": "ML Engineer Intern",
+      "period": "07/2023",
+      "periodEnd": "12/2023",
+      "type": "Internship",
+      "location": "Kusterdingen, Germany",
+      "bullets": [
+        "Automated data pipelines reducing processing time by 30%",
+        "Built KPI dashboards for manufacturing process monitoring",
+        "Improved analysis workflows using Python, SQL, and visualization tools",
+        "Applied machine learning techniques to quality assurance processes"
+      ],
+      "tech": ["Python", "SQL", "Scikit-learn", "Pandas", "Power BI"]
+    },
+    {
+      "id": "brainnest",
+      "company": "Brainnest",
+      "role": "Data Analyst Trainee",
+      "period": "01/2023",
+      "periodEnd": "02/2023",
+      "type": "Training",
+      "location": "Bremen, Germany",
+      "bullets": [
+        "Analyzed large datasets using Python and visualization tools",
+        "Built interactive business intelligence reports for stakeholders",
+        "Developed statistical models for deriving actionable insights"
+      ],
+      "tech": ["Python", "Pandas", "Matplotlib", "Excel"]
+    },
+    {
+      "id": "uni-siegen",
+      "company": "Intelligent Systems Group, Uni Siegen",
+      "role": "Working Student",
+      "period": "06/2022",
+      "periodEnd": "01/2023",
+      "type": "Part-time",
+      "location": "Siegen, Germany",
+      "bullets": [
+        "Supported research in intelligent systems and robotics automation",
+        "Implemented data collection, labeling, and processing scripts",
+        "Contributed to academic research projects and documentation"
+      ],
+      "tech": ["Python", "MATLAB", "ROS", "NumPy"]
+    },
+    {
+      "id": "network-enhancers",
+      "company": "Network Enhancers",
+      "role": "Graduate Engineer Trainee",
+      "period": "06/2019",
+      "periodEnd": "06/2020",
+      "type": "Full-time",
+      "location": "Hyderabad, India",
+      "bullets": [
+        "Worked on network infrastructure and systems engineering",
+        "Managed enterprise-level technical operations and documentation",
+        "Built process workflows and technical reporting systems"
+      ],
+      "tech": ["Linux", "Networking", "Documentation"]
+    }
+  ]
+}
