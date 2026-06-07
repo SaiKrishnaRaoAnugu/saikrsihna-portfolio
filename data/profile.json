@@ -40,7 +40,7 @@
       "desc": "End-to-end Retrieval Augmented Generation system using LangChain and Mistral LLM via Ollama for fully local inference. Semantic document retrieval with FAISS and HuggingFace embeddings, and a modern Streamlit interface for privacy-focused document Q&A without external APIs.",
       "tech": ["LangChain", "Mistral LLM", "Ollama", "FAISS", "HuggingFace", "Streamlit", "Python"],
       "link": "https://github.com/SaiKrishnaRaoAnugu",
-      "image": "/assets/project-smartdoc.jpg"
+      "image": "/assets/project-smartdoc.png"
     }
   ],
   "experience": [
