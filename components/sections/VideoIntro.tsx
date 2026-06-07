@@ -101,44 +101,48 @@ export default function VideoIntro() {
         />
       )}
 
-      {/* Main video */}
-      {hasVideo ? (
-        <video
-          ref={videoRef}
-          src={VIDEO_SRC}
-          muted
-          playsInline
-          onPlay={() => setPlaying(true)}
-          onPause={() => setPlaying(false)}
-          onEnded={handleEnded}
-          onError={() => setHasVideo(false)}
-          className={styles.mainVideo}
-        />
-      ) : (
-        <div className={styles.videoPH} />
-      )}
-
       <div className={styles.overlay} />
       {!isMobile && <CinematicLayer />}
 
-      <div className={styles.heroContent}>
-        <p ref={greetRef} className={styles.eyebrow}>{TAGLINE}</p>
-        <h1 ref={nameRef} className={styles.name}>
-          {NAME_FIRST}
-          <br />
-          {NAME_LAST}
-        </h1>
-        <p ref={roleRef} className={styles.role}>{ROLE}</p>
-      </div>
+      <div className={styles.innerLayout}>
+        {/* Left: text */}
+        <div className={styles.heroContent}>
+          <p ref={greetRef} className={styles.eyebrow}>{TAGLINE}</p>
+          <h1 ref={nameRef} className={styles.name}>
+            {NAME_FIRST}
+            <br />
+            {NAME_LAST}
+          </h1>
+          <p ref={roleRef} className={styles.role}>{ROLE}</p>
+        </div>
 
-      {hasVideo && !playing && (
-        <button className={styles.playOverlay} onClick={togglePlay} aria-label="Play video">
-          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-            <circle cx="36" cy="36" r="35" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" />
-            <polygon points="29,20 56,36 29,52" fill="white" />
-          </svg>
-        </button>
-      )}
+        {/* Right: video frame */}
+        <div className={styles.videoFrame}>
+          {hasVideo ? (
+            <video
+              ref={videoRef}
+              src={VIDEO_SRC}
+              muted
+              playsInline
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+              onEnded={handleEnded}
+              onError={() => setHasVideo(false)}
+              className={styles.mainVideo}
+            />
+          ) : (
+            <div className={styles.videoPH} />
+          )}
+          {hasVideo && !playing && (
+            <button className={styles.playOverlay} onClick={togglePlay} aria-label="Play video">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <circle cx="36" cy="36" r="35" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" />
+                <polygon points="29,20 56,36 29,52" fill="white" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
 
       <button
         ref={scrollRef}
