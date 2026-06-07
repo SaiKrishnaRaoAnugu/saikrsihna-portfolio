@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050508;
-  --foreground: #ededed;
+  --background: #04070d;
+  --foreground: #eef4ff;
+  --surface: rgba(8, 11, 19, 0.82);
+  --surface-strong: rgba(15, 23, 42, 0.9);
+  --line: rgba(148, 163, 184, 0.14);
+  --accent: #fb7185;
+  --accent-2: #8b5cf6;
+  --accent-3: #38bdf8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-space-mono);
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: #050508;
-  color: #ededed;
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(251, 113, 133, 0.08), transparent 24%),
+    radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.08), transparent 18%),
+    radial-gradient(circle at bottom, rgba(139, 92, 246, 0.10), transparent 22%),
+    linear-gradient(135deg, #020617 0%, #060b13 45%, #030712 100%);
+  color: var(--foreground);
   font-family: var(--font-dm-sans), var(--font-inter), sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(251, 113, 133, 0.35);
+  color: #fff;
 }
 
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+main {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cinematic-shell {
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.82), rgba(6, 10, 18, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 25px 80px rgba(15, 23, 42, 0.35);
+}
+
+.cinematic-pill {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.66);
+  backdrop-filter: blur(14px);
 }
 
 /* Typography hierarchy */

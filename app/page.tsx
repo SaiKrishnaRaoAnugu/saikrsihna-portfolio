@@ -442,6 +442,7 @@ function CodeCard() {
 function Hero() {
   const { lang } = useLanguage();
   const t = translations[lang].hero;
+  const focusPills = ["AI Systems", "Backend Engineering", "Data & ML", "Product Design"];
   const role = useTypewriter(
     lang === "en"
       ? ["AI Software Engineer", "Data Scientist", "Backend Architect", "ML Engineer"]
@@ -454,11 +455,11 @@ function Hero() {
         <div className="grid lg:grid-cols-[1fr_430px] gap-16 items-center">
           <div>
             <motion.div
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-sm font-medium mb-10"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border text-sm font-medium mb-8 cinematic-pill"
               style={{
-                background: "rgba(34,197,94,0.08)",
-                borderColor: "rgba(34,197,94,0.25)",
-                color: "#4ade80",
+                background: "linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.85))",
+                borderColor: "rgba(74, 222, 128, 0.22)",
+                color: "#bbf7d0",
                 fontFamily: "var(--font-dm-sans)",
               }}
               initial={{ opacity: 0, scale: 0.9, y: 10 }}
@@ -473,7 +474,7 @@ function Hero() {
             </motion.div>
 
             <motion.p
-              className="text-gray-400 text-xl mb-3"
+              className="text-gray-300 text-xl mb-3"
               style={{ fontFamily: "var(--font-dm-sans)" }}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -522,7 +523,7 @@ function Hero() {
             </motion.div>
 
             <motion.p
-              className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl"
+              className="text-gray-300/90 text-lg leading-relaxed mb-8 max-w-xl"
               style={{ fontFamily: "var(--font-dm-sans)" }}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -532,7 +533,24 @@ function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-2 mb-8"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.72 }}
+            >
+              {focusPills.map((pill) => (
+                <span
+                  key={pill}
+                  className="cinematic-pill rounded-full px-3 py-1.5 text-xs uppercase tracking-[0.22em] text-slate-200/90"
+                  style={{ fontFamily: "var(--font-space-mono)" }}
+                >
+                  {pill}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="flex flex-wrap gap-3 mb-8"
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -562,13 +580,13 @@ function Hero() {
           </div>
 
           <motion.div
-            className="hidden lg:flex justify-center"
+            className="hidden lg:flex flex-col items-center gap-4"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
-              className="relative"
+              className="relative cinematic-shell rounded-[28px] p-2"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ scale: 1.03 }}
@@ -581,7 +599,7 @@ function Hero() {
                   filter: "blur(10px)",
                 }}
               />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60">
+              <div className="relative rounded-[24px] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black/30">
                 <Image
                   src="/profile.jpg"
                   alt="Sai Krishna Rao Anugu"
@@ -591,6 +609,19 @@ function Hero() {
                   priority
                 />
               </div>
+            </motion.div>
+
+            <motion.div
+              className="cinematic-shell rounded-3xl px-4 py-4 w-full max-w-[380px] text-sm text-slate-200/90"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.95 }}
+            >
+              <p className="text-[11px] uppercase tracking-[0.28em] text-rose-200/80" style={{ fontFamily: "var(--font-space-mono)" }}>
+                Current focus
+              </p>
+              <p className="mt-2 text-base font-semibold text-white">Building AI products with real-world backend impact.</p>
+              <p className="mt-2 text-slate-300/90">Fast APIs, ML pipelines, and clean interfaces for ambitious teams.</p>
             </motion.div>
           </motion.div>
         </div>
