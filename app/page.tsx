@@ -72,14 +72,20 @@ export default function Page() {
     const main = mainRef.current;
     if (!main) return;
 
-    // Determine scroll targets (every 100vh increment)
+    // Determine scroll targets (every 100vh increment, with intermediate points for tall sections)
     function getSnapTargets() {
       const children = Array.from(main!.children) as HTMLElement[];
       const targets: number[] = [];
       let acc = 0;
+      const vh = window.innerHeight;
       children.forEach((child) => {
         targets.push(acc);
-        acc += child.offsetHeight;
+        const h = child.offsetHeight;
+        const steps = Math.round(h / vh);
+        for (let s = 1; s < steps; s++) {
+          targets.push(acc + s * vh);
+        }
+        acc += h;
       });
       return targets;
     }
